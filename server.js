@@ -12,6 +12,7 @@ const connection = mysql.createConnection({
     database: 'dbfastify'
 });
 
+//Fastify instance
 const app = fastify()
 
 //Create
