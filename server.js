@@ -34,6 +34,15 @@ app.post('/users', async (request, reply) => {
 
 //Update By ID 
 
+app.put('/users/:id', async (request, reply) => {
+    const { id } = request.params;
+    const {name, email} = request.body;
+    await connection.query(
+        'UPDATE users SET name = ?, email = ? WHERE id = ?',
+    [name, email, id]
+    );
+        return {id, name, email};
+});
 
 // Delete
 
