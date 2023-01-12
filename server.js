@@ -46,6 +46,11 @@ app.put('/users/:id', async (request, reply) => {
 
 // Delete
 
+app.delete('/users/:id', async(request, reply) => {
+    const {id} = request.params;
+    await connection.query('DELETE FROM users WHERE id = ?', [id]);
+    return {message: ' Sukses lur'};
+});
 
 
 
